@@ -1,0 +1,44 @@
+[package]
+name = "k4dos"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "k4dos"
+test = false
+bench = false
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+limine = "0.1.10"
+volatile = "0.2.7"
+# multiboot2 = "0.14.1"
+spin = "0.9"
+bit_field = "0.10.2"
+x86 = "0.52.0"
+x86_64 = "0.14.10"
+log = "0.4.17"
+pic8259 = "0.10.2"
+bitflags = "2.0.1"
+uart_16550 = "0.2.18"
+crossbeam-utils = { version = "0.8.12", default-features = false }
+atomic_refcell = "0.1.8"
+buddy_system_allocator = { version = "0.8.0", features = ["const_fn"] }
+pc-keyboard = "0.7.0"
+memoffset = { version = "0.7.1", features = ["unstable_const"] }
+xmas-elf = "0.8.0"
+rustc-demangle = "0.1.21"
+arrayvec = { version = "0.7.2", default-features = false }
+x2apic = "0.4.2"
+elfloader = "0.16.0"
+bitvec = { version = "1.0.1", default-features = false }
+embedded-graphics = "0.7.1"
+smoltcp = { version = "0.9.1", default-features = false, features = ["alloc", "proto-ipv4", "socket", "socket-raw", "socket-udp", "socket-tcp", "proto-dhcpv4", "medium-ethernet"] }
+
+[dependencies.lazy_static]
+version = "1.4.0"
+features = ["spin_no_std"]
+
+[profile.release]
+debug = 1
